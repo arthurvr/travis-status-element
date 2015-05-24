@@ -1,0 +1,36 @@
+<!doctype html>
+<meta charset="utf-8">
+<script src="../node_modules/webcomponents.js/webcomponents.js"></script>
+<script src="../node_modules/web-component-tester/browser.js"></script>
+<script src="../dist/travis-status.js"></script>
+
+<img is="travis-status" id="fixture" branch="master" username="arthurvr" repo="image-extensions">
+<img is="travis-status" id="fixture-without-branch" username="arthurvr" repo="atanh">
+
+<script>
+	describe('<travis-status>', function () {
+		beforeEach(function () {
+			this.fixture = document.querySelector('#fixture');
+		});
+
+		it('should have the right src', function () {
+			assert.equal(this.fixture.getAttribute('src'), 'https://api.travis-ci.org/arthurvr/image-extensions.svg?branch=master');
+		});
+
+		it('should update when attributes change', function () {
+			this.fixture.setAttribute('username', 'unicorn');
+			assert(this.fixture.getAttribute('src').match(/unicorn/));
+			this.fixture.setAttribute('username', 'arthurvr');
+		});
+
+		it('`branch` should default to `master`', function () {
+			var fixture = document.querySelector('#fixture-without-branch');
+			assert(fixture.getAttribute('src').match(/branch=master/));
+		});
+
+		it('should be exposed as a global', function () {
+			assert(window.TravisStatus);
+			assert(this.fixture instanceof TravisStatus);
+		});
+	});
+</script>
