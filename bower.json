@@ -1,0 +1,24 @@
+{
+	"name": "travis-status-element",
+	"version": "0.1.0",
+	"description": "Custom element for Travis CI badges",
+	"main": "dist/travis-status.js",
+	"authors": [
+		"Arthur Verschaeve"
+	],
+	"license": "MIT",
+	"keywords": [
+		"web-components",
+		"travis",
+		"status",
+		"badge",
+		"component",
+		"element",
+		"web-component"
+	],
+	"ignore": [
+		"node_modules",
+		"bower_components",
+		"**/.*"
+	]
+}
