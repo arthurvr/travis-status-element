@@ -1,7 +1,8 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.0",
+    "babel": "^5.4.7",
     "gulp-babel": "^4.0.0",
     "gulp-uglify": "^1.1.0",
     "web-component-tester": "^3.1.3",
