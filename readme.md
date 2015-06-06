@@ -18,7 +18,7 @@ $ bower install --save travis-status-element
 
 ## Options
 
-Attribute     | Options     | Default      | Description
+Attribute     | Type        | Default      | Description
 ---           | ---         | ---          | ---
 `username`    | *string*    | `null`       | **Required.** Username
 `repo`        | *string*    | `null`       | **Required.** Name of the repo
